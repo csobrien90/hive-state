@@ -26,7 +26,7 @@ function hive_state_activate() {
 			'post_status' 	=>	'publish',
 			'post_author' 	=>	$current_user->ID,
 			'post_type'   	=>	'page',
-			'post_content'	=>	''
+			'post_content'	=>	'',
 		);
 		
 		// insert the post into the database
@@ -53,7 +53,6 @@ function hive_state_admin() {
 	<?php
 }
 
-//TODO: Remove link from admin menu and place link on homepage
 function add_hive_state_dashboard_menu_item() {
 	add_menu_page(
 		'Hive State',
@@ -72,3 +71,5 @@ add_action('wp_enqueue_scripts', function(){
 	wp_enqueue_style( 'hive_state_styles', plugin_dir_url( __FILE__ ).'/hive-state-styles.css');
 	wp_enqueue_style( 'dashicons' );
 } );
+
+require_once 'hive-state-functions.php';
